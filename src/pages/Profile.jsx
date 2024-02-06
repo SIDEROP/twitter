@@ -28,7 +28,6 @@ const Profile = () => {
   let postGEt = ()=>{
     if (userData) {
       dis(getProfilePost(userData?._id))
-      console.log("hello")
    }
   }
 
@@ -70,18 +69,19 @@ const Profile = () => {
             </div>
             </form>
           }
-          <button onClick={()=>setToggel(pre=>!pre)}>{toggelLo?"Cancel":"Edit"}</button>
+          <button id='btn__' onClick={()=>setToggel(pre=>!pre)}>{toggelLo?"Cancel":"Edit"}</button>
         </div>
       </div>
       <div className='userPost_'>
         {
-          tooggel && <Edit id={editPost}/>
+          tooggel && <Edit id={editPost} user={userData._id}/>
         }
             {
               allUseProfiledata && allUseProfiledata?.map((val)=>(
                 <div className='allUserPro' key={val._id}>
                   <div className='statusUser_'  >
                       {val.title}
+                      {console.log(val)}
                   </div>
                   <div className="comment">
                     {val.comment}

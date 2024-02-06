@@ -1,0 +1,30 @@
+.editPost__{
+    background-color: black;
+    padding: 9px;
+    border-radius: 10px;
+
+}
+.editPost__ form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.editPost__ form input{
+    height: 25px;
+    padding: 5px;
+}
+
+button{
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: aqua;
+}
+
+a:hover{
+    color: orange !important;
+}

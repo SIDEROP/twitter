@@ -64,6 +64,25 @@ export let deleteProfilePost = createAsyncThunk("deleteProfilePost", async (data
 })
 
 
+// postUpdate
+export let postUpdate = createAsyncThunk("postUpdate", async (data,{rejectWithValue})=>{
+    let rdb = await fetch(`https://api-teal-eight.vercel.app/api/post/put`,{
+        method:"PUT",
+        headers:{
+            "content-type":"application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    
+    try {
+        let dat = await rdb.json()
+        return dat
+    } catch (error) {
+        return rejectWithValue(error)
+    }
+})
+
+
 
 
 export let twitterPost = createSlice({
@@ -73,7 +92,8 @@ export let twitterPost = createSlice({
         error:null,
         postUserdata:[],
         allUseProfiledata:[],
-        delete:[]
+        delete:[],
+        postUpdate:[]
     },
     reducers:(state,action)=>{
 
@@ -123,6 +143,12 @@ export let twitterPost = createSlice({
         builder.addCase(deleteProfilePost.fulfilled,(state,action)=>{
             state.loadin = false,
             state.delete = action.payload
+        })
+
+        // postUpdate
+        builder.addCase(postUpdate.fulfilled,(state,action)=>{
+            state.loadin = false,
+            state.postUpdate = action.payload
         })
     }
 })
