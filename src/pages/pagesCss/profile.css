@@ -1,0 +1,99 @@
+.Profile{
+    position: relative;
+    width: 100%;
+    min-height: 10%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Profile .profileBox{
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: 9px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.Profile .profileBox  .userName_{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+.Profile .profileBox  .userName_ button{
+    z-index: 10;
+    margin-left: 10px;
+}
+
+
+.profileBox .profi_{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+/* userPost_ */
+.Profile .userPost_::-webkit-scrollbar{
+    display: none;
+}
+
+.Profile .userPost_{
+    width: 100%;
+    position: relative;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 20px;
+}
+
+.Profile .userPost_ .allUserPro{
+    background-color: black;
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.Profile .userPost_ .allUserPro .comment{
+    border: 1px solid white;
+    height: 90px;
+}
+
+
+
+
+.Profile form.editID{
+    position: absolute;
+    padding: 0;
+}
+.Profile .editID{
+    height: 110px;
+    width: 300px;
+    background-color: black;
+    position: absolute;
+    border-radius: 10px;
+    color: white;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Profile .editID label{
+    font-size: 12px;
+}
+.Profile .editID button{
+    width: 40px;
+    margin-top: 5px;
+}
+
+.edidel{
+    display: flex;
+    justify-content: start;
+    position: relative;
+    gap: 20px;
+    padding: 10px 0px 5px 10px;
+}
