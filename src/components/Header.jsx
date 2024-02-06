@@ -10,8 +10,17 @@ const Header = () => {
   let [toggel,setToggel] = useState(false)
   return (
     <div className='header'>
+
+      <button className="btnClose" onClick={()=>{
+          document.getElementById("nav").classList.toggle("activeNav")
+        }}>
+          <i class='bx bx-menu'></i>
+        </button>
+
       <h1>Twitter</h1>
-      <nav>
+      <nav id="nav" >
+      <div className="btnClose">
+      </div>
         {
           toggel && <div className="searchBox">
           <input type="search" onChange={e=>usedis(userSearch(e.target.value))}/>
