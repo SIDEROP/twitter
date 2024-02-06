@@ -96,3 +96,21 @@
     border: 1px solid rgba(0, 0, 0, 0.177);
     overflow-y: auto;
 }
+
+
+.searchApi{
+    color: white;
+    padding: 4px;
+    margin-top: 10px;
+    position: absolute;
+    z-index: 2;
+    width: 200px;
+}
+
+.searchApi h3{
+    background-color: black;
+    display: flex;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 10px;
+}

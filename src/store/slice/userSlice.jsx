@@ -59,6 +59,25 @@ export let userEdit = createAsyncThunk("userEdit", async (data,{rejectWithValue}
 })
 
 
+// userEdit
+export let userSearch = createAsyncThunk("userSearch", async (data,{rejectWithValue})=>{
+    let rdb = await fetch(`https://api-teal-eight.vercel.app/api/user/search/${data}`,{
+        method:"POST"
+    })
+    
+
+    try {
+        let dat = await rdb.json()
+        return dat
+    } catch (error) {
+        return rejectWithValue(error)
+    }
+})
+
+
+
+
+
 
 
 export let getEditUser = createAsyncThunk("getEditUser", async (data,{rejectWithValue})=>{
@@ -89,7 +108,8 @@ export let twitterUser = createSlice({
         error:null,
         userData:[],
         user:false,
-        userEdi:[]
+        userEdi:[],
+        userSearch:[]
     },
     reducers:{
        async getIditData(state, action) {
@@ -135,10 +155,13 @@ export let twitterUser = createSlice({
         builder.addCase(userEdit.fulfilled,(state,action)=>{
             state.userEdi = action.payload
         })
-
         // getEditUser
         builder.addCase(getEditUser.fulfilled,(state,action)=>{
             state.userData = action.payload
+        })
+        // userSearch
+        builder.addCase(userSearch.fulfilled,(state,action)=>{
+            state.userSearch = action.payload
         })
     }
 })

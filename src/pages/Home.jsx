@@ -5,7 +5,7 @@ import { postGetAll, postPost } from '../store/slice/postSlice'
 
 const Home = () => {
   let {user} = useSelector(state=>state.app)
-  let {userData} = useSelector(state =>state?.app)
+  let {userData,userSearch} = useSelector(state =>state?.app)
   let disPa = useDispatch()
   let {postUserdata, loadin} = useSelector(state =>state.postapp)
 
@@ -34,6 +34,13 @@ const Home = () => {
   
   return (
     <div className='Home'>
+      <div className="searchApi">
+      {
+            userSearch && userSearch.map(val=>(
+                <h3>@{val.username}</h3>
+            ))
+      }
+      </div>
       <div className="postBox">
         <div className="userPost">
             <form className='formUser' onSubmit={postSub}>
