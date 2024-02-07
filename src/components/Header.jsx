@@ -1,13 +1,19 @@
 import { Link, useNavigate } from "react-router-dom"
 import "./header.css"
 import React, { useState } from 'react'
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { userGet, userSearch } from "../store/slice/userSlice"
 
 const Header = () => {
+  let {user} = useSelector(state=>state.app)
   let usedis = useDispatch()
   let useNav = useNavigate()
   let [toggel,setToggel] = useState(false)
+
+  
+  if (!user) {
+    return null
+  }
   return (
     <div className='header'>
 

@@ -8,6 +8,7 @@ import Edit from '../components/Edit'
 const Profile = () => {
   let dis = useDispatch()
   let {userData} = useSelector(state =>state?.app)
+  console.log(userData)
   let {allUseProfiledata} = useSelector(state =>state?.postapp)
 
   let [editName, editSetName] = useState({_id:"",name:"",status:""})
@@ -55,7 +56,7 @@ const Profile = () => {
           </div>
         </div>
         <div className='userName_'>
-          <h3>@{allUseProfiledata[0]?.name}</h3>
+          <h3>@{userData?.username}</h3>
           <h2 >{userData?.name}</h2>
           <h4 >{userData?.status}</h4>
           {

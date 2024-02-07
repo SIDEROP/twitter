@@ -36,6 +36,10 @@
     display: none;
 }
 
+.header nav .searchBox input{
+    text-transform: lowercase;
+}
+
 @media only screen and (max-width: 580px) {
     .header nav{
         display: none;
